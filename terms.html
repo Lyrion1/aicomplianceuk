@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — AI Comply</title>
+    <meta name="description" content="Terms of Service for AI Comply, operated by Alexander Afolabi. Governed by the laws of England and Wales.">
+    <link rel="canonical" href="https://aicomplianceuk.co.uk/terms.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #1B2A4A;
+            --navy-deep: #0F1A2E;
+            --navy-light: #243658;
+            --gold: #C9A84C;
+            --gold-light: #D4BA6A;
+            --gold-pale: #F5EDD6;
+            --cream: #FAF8F4;
+            --white: #FFFFFF;
+            --gray-200: #E8E8E8;
+            --gray-400: #9CA3AF;
+            --gray-600: #6B7280;
+            --gray-800: #374151;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); color: var(--gray-800); background: var(--cream); overflow-x: hidden; line-height: 1.7; margin: 0; padding: 0; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Navigation */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease-out-expo); }
+        .nav.scrolled { background: rgba(15,26,46,0.97); backdrop-filter: blur(20px); padding: 14px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; }
+        .nav-logo-icon { width: 38px; height: 38px; background: var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--navy-deep); }
+        .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--white); letter-spacing: 0.02em; }
+        .nav-logo-text span { color: var(--gold); }
+        .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+        .nav-links a { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s var(--ease-out-expo); }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--gold) !important; color: var(--navy-deep) !important; padding: 10px 24px !important; border-radius: 4px; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; }
+        .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+        .nav-cta::after { display: none !important; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Page header */
+        .page-header { background: var(--navy-deep); padding: 140px 0 60px; border-bottom: 1px solid rgba(201,168,76,0.1); }
+        .page-header h1 { font-family: var(--font-display); font-size: clamp(36px,5vw,64px); font-weight: 500; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+        .page-header p { font-size: 16px; color: rgba(255,255,255,0.5); }
+
+        /* Main content */
+        .privacy-content { background: var(--cream); padding: 80px 0; }
+        .privacy-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy-deep); padding: 12px 28px; border-radius: 4px; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s var(--ease-out-expo); margin-bottom: 48px; }
+        .back-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+        .back-btn svg { transition: transform 0.3s; }
+        .back-btn:hover svg { transform: translateX(-3px); }
+
+        .back-btn-bottom { margin-bottom: 0; margin-top: 48px; }
+
+        .privacy-section { margin-bottom: 48px; }
+        .privacy-section h2 { font-family: var(--font-display); font-size: clamp(22px,3vw,32px); font-weight: 600; color: var(--gold); line-height: 1.2; margin-bottom: 16px; }
+        .privacy-section p { color: var(--navy); font-size: 16px; line-height: 1.8; margin-bottom: 14px; }
+        .privacy-section p:last-child { margin-bottom: 0; }
+        .privacy-section ul { list-style: none; padding: 0; margin: 12px 0 14px; }
+        .privacy-section ul li { color: var(--navy); font-size: 16px; line-height: 1.8; padding-left: 20px; position: relative; margin-bottom: 4px; }
+        .privacy-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
+        .privacy-section a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .privacy-section a:hover { color: var(--gold-light); }
+
+        .last-updated { display: inline-block; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 8px 18px; font-size: 13px; font-weight: 500; color: var(--gray-600); letter-spacing: 0.02em; margin-bottom: 48px; }
+
+        /* Footer */
+        .footer { background: var(--navy-deep); padding: 60px 0 40px; border-top: 1px solid rgba(201,168,76,0.1); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.4); max-width: 320px; line-height: 1.7; margin-top: 16px; }
+        .footer-links h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .footer-links a { display: block; font-size: 14px; color: rgba(255,255,255,0.5); padding: 6px 0; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .footer-legal { display: flex; gap: 24px; align-items: center; }
+        .footer-legal a { font-size: 13px; color: rgba(255,255,255,0.3); transition: color 0.3s; }
+        .footer-legal a:hover { color: var(--gold); }
+        .footer-legal-current { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--navy-deep); justify-content: center; align-items: center; gap: 32px; z-index: 999; }
+            .nav-links.open a { font-size: 20px; color: var(--white); }
+            .footer-inner { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="nav-logo-icon">AC</div>
+                    <div class="nav-logo-text">AI <span>Comply</span></div>
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html#problem">Why Now</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#products">Templates</a></li>
+                    <li><a href="index.html#credentials">About</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our services.</p>
+        </div>
+    </div>
+
+    <main class="privacy-content">
+        <div class="privacy-inner">
+
+            <a href="index.html" class="back-btn reveal">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Home
+            </a>
+
+            <p class="last-updated reveal reveal-delay-1">Last Updated: February 2026</p>
+
+            <div class="privacy-section reveal reveal-delay-1">
+                <h2>Acceptance of Terms</h2>
+                <p>By accessing or using <a href="https://aicomplianceuk.co.uk">aicomplianceuk.co.uk</a>, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this website or any of our services. These terms apply to all visitors, users and clients of AI Comply.</p>
+            </div>
+
+            <div class="privacy-section reveal reveal-delay-2">
+                <h2>About Our Services</h2>
+                <p>AI Comply provides the following products and services to UK businesses:</p>
+                <ul>
+                    <li>Compliance templates sold via Gumroad</li>
+                    <li>AI compliance health checks</li>
+                    <li>Full compliance audits</li>
+                    <li>Staff training programmes</li>
+                    <li>Ongoing advisory retainers</li>
+                    <li>Fractional AI compliance officer services</li>
+                </ul>
+                <p>All services are provided by Alexander Afolabi trading as AI Comply, with our website at <a href="https://aicomplianceuk.co.uk">aicomplianceuk.co.uk</a>.</p>
+            </div>
+
+            <div class="privacy-section reveal reveal-delay-3">
+                <h2>Important Legal Disclaimer</h2>
+                <p>All templates, documents and advice provided by AI Comply are for practical compliance purposes only and do not constitute legal advice.</p>
+                <p>AI Comply is not a law firm and Alexander Afolabi is not acting as a solicitor in providing these services. Nothing on this website or in any of our materials should be construed as the provision of legal advice or the creation of a solicitor–client relationship.</p>
+                <p>Users should seek independent qualified legal counsel for advice specific to their legal situation. AI Comply accepts no liability for any reliance placed on the content of our templates or materials as legal advice.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>Intellectual Property</h2>
+                <p>All templates, content, frameworks and materials are the intellectual property of AI Comply and Alexander Afolabi. All rights are reserved.</p>
+                <p>Purchase of a template grants a <strong>single business licence for internal use only</strong>. You may use the purchased template within your own organisation but you may not share, copy or distribute it beyond that purpose.</p>
+                <p>Resale, redistribution or sublicensing of any template or material is strictly prohibited. Any breach of these intellectual property terms may result in legal action.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>Payment and Refunds</h2>
+                <p>Template purchases are processed securely by Gumroad. When you purchase a template, Gumroad's own terms of service and payment processing conditions will also apply to your transaction.</p>
+                <p>All sales are final and non-refundable except where required by the Consumer Rights Act 2015 or other applicable UK consumer law. If you believe you are entitled to a refund under UK consumer law, please contact us at <a href="mailto:alex.afolabi@aicomplianceuk.co.uk">alex.afolabi@aicomplianceuk.co.uk</a>.</p>
+                <p>Service fees for health checks, audits, training and retainers are set out in individual engagement letters or invoices agreed with each client prior to commencement of services.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>No Guarantee of Compliance</h2>
+                <p>While our templates are drafted to reflect current UK GDPR, DPA 2018 and EU AI Act requirements, regulations change and AI Comply does not guarantee that use of any template will ensure full regulatory compliance in every circumstance.</p>
+                <p>Users are responsible for keeping their compliance frameworks up to date and for verifying that any template or material remains appropriate for their specific regulatory context. AI Comply recommends seeking up-to-date regulatory guidance from the relevant supervisory authorities.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, AI Comply's liability for any claim arising from use of this site or our services is limited to the amount paid for the relevant service.</p>
+                <p>AI Comply is not liable for any indirect, consequential, special or incidental losses arising from or in connection with your use of our website, templates or services, including but not limited to loss of business, loss of profits or loss of data.</p>
+                <p>Nothing in these terms limits our liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded by law.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>Governing Law</h2>
+                <p>These Terms of Service are governed by and construed in accordance with the laws of England and Wales. Any disputes arising out of or in connection with these terms or your use of our services are subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+            </div>
+
+            <div class="privacy-section reveal">
+                <h2>Contact</h2>
+                <p>If you have any questions about these Terms of Service, please contact AI Comply at <a href="mailto:alex.afolabi@aicomplianceuk.co.uk">alex.afolabi@aicomplianceuk.co.uk</a>. We aim to respond to all enquiries within five working days.</p>
+            </div>
+
+            <a href="index.html" class="back-btn back-btn-bottom reveal">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Home
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-icon">AC</div>
+                        <div class="nav-logo-text">AI <span>Comply</span></div>
+                    </a>
+                    <p>AI compliance made practical for UK businesses. Expert-built templates, health checks and training programmes for SMEs navigating UK GDPR, DPA 2018 and the EU AI Act.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="index.html#products">Compliance Templates</a>
+                    <a href="index.html#contact">Health Check</a>
+                    <a href="index.html#contact">Full Audit</a>
+                    <a href="index.html#contact">Staff Training</a>
+                    <a href="index.html#contact">Advisory Retainer</a>
+                    <a href="index.html#contact">Fractional Compliance Officer</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="https://aicomplianceuk.gumroad.com/l/free-ai-compliance-checklist">Free AI Checklist</a>
+                    <a href="https://aicomplianceuk.gumroad.com">All Templates</a>
+                    <a href="https://www.linkedin.com/in/alexanderafolabi">LinkedIn</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="mailto:alex.afolabi@aicomplianceuk.co.uk">Email Us</a>
+                    <a href="index.html#contact">Send Enquiry</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2026 AI Comply. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="footer-legal-current">Terms of Service</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        }));
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
