@@ -37,87 +37,37 @@
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
         html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--gray-800);
-            background: var(--cream);
-            overflow-x: hidden;
-            line-height: 1.7;
-            /* FIX: ensure no extra bottom space */
-            margin: 0;
-            padding: 0;
-        }
-
+        body { font-family: var(--font-body); color: var(--gray-800); background: var(--cream); overflow-x: hidden; line-height: 1.7; margin: 0; padding: 0; }
         img { max-width: 100%; display: block; }
         a { text-decoration: none; color: inherit; }
         button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-gold {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
-            50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
-        }
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); } 50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); } }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-        }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
 
-        /* NAV */
-        .nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.4s var(--ease-out-expo);
-        }
-        .nav.scrolled {
-            background: rgba(15,26,46,0.97);
-            backdrop-filter: blur(20px);
-            padding: 14px 0;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-        }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s var(--ease-out-expo); }
+        .nav.scrolled { background: rgba(15,26,46,0.97); backdrop-filter: blur(20px); padding: 14px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
         .nav-inner { display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { display: flex; align-items: center; gap: 12px; }
-        .nav-logo-icon {
-            width: 38px; height: 38px; background: var(--gold); border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--navy-deep);
-        }
+        .nav-logo-icon { width: 38px; height: 38px; background: var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--navy-deep); }
         .nav-logo-text { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--white); letter-spacing: 0.02em; }
         .nav-logo-text span { color: var(--gold); }
         .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-        .nav-links a {
-            color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 400;
-            letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; position: relative;
-        }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 1px; background: var(--gold); transition: width 0.3s var(--ease-out-expo);
-        }
+        .nav-links a { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s var(--ease-out-expo); }
         .nav-links a:hover { color: var(--gold); }
         .nav-links a:hover::after { width: 100%; }
-        .nav-cta {
-            background: var(--gold) !important; color: var(--navy-deep) !important;
-            padding: 10px 24px !important; border-radius: 4px; font-weight: 600 !important;
-            font-size: 13px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important;
-        }
+        .nav-cta { background: var(--gold) !important; color: var(--navy-deep) !important; padding: 10px 24px !important; border-radius: 4px; font-weight: 600 !important; font-size: 13px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important; }
         .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
         .nav-cta::after { display: none !important; }
         .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
@@ -126,100 +76,42 @@
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        /* HERO */
-        .hero {
-            min-height: 100vh; background: var(--navy-deep);
-            position: relative; display: flex; align-items: center; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 40%);
-        }
-        .hero::after {
-            content: ''; position: absolute; inset: 0;
-            background-image:
-                linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-        }
+        .hero { min-height: 100vh; background: var(--navy-deep); position: relative; display: flex; align-items: center; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 40%); }
+        .hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 60px 60px; }
         .hero-content { position: relative; z-index: 2; padding: 140px 0 100px; }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
-            border-radius: 40px; padding: 8px 20px; margin-bottom: 32px;
-            animation: fadeUp 0.8s var(--ease-out-expo) both;
-        }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); border-radius: 40px; padding: 8px 20px; margin-bottom: 32px; animation: fadeUp 0.8s var(--ease-out-expo) both; }
         .hero-eyebrow-dot { width: 8px; height: 8px; background: var(--red-accent); border-radius: 50%; animation: pulse-gold 2s infinite; }
         .hero-eyebrow span { color: var(--gold); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
-        .hero h1 {
-            font-family: var(--font-display); font-size: clamp(42px,6vw,80px);
-            font-weight: 500; color: var(--white); line-height: 1.1;
-            max-width: 800px; margin-bottom: 28px;
-            animation: fadeUp 0.8s var(--ease-out-expo) 0.15s both;
-        }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(42px,6vw,80px); font-weight: 500; color: var(--white); line-height: 1.1; max-width: 800px; margin-bottom: 28px; animation: fadeUp 0.8s var(--ease-out-expo) 0.15s both; }
         .hero h1 em { font-style: italic; color: var(--gold); }
-        .hero-sub {
-            font-size: 18px; color: rgba(255,255,255,0.6); max-width: 560px;
-            line-height: 1.8; margin-bottom: 44px;
-            animation: fadeUp 0.8s var(--ease-out-expo) 0.3s both;
-        }
+        .hero-sub { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.8; margin-bottom: 44px; animation: fadeUp 0.8s var(--ease-out-expo) 0.3s both; }
         .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; animation: fadeUp 0.8s var(--ease-out-expo) 0.45s both; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: var(--gold); color: var(--navy-deep); padding: 16px 36px;
-            border-radius: 4px; font-weight: 600; font-size: 14px;
-            letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s var(--ease-out-expo);
-        }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy-deep); padding: 16px 36px; border-radius: 4px; font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s var(--ease-out-expo); }
         .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 10px;
-            color: rgba(255,255,255,0.7); padding: 16px 4px;
-            font-size: 14px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.3s;
-        }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); padding: 16px 4px; font-size: 14px; font-weight: 400; letter-spacing: 0.04em; transition: color 0.3s; }
         .btn-secondary:hover { color: var(--gold); }
         .btn-secondary svg { transition: transform 0.3s; }
         .btn-secondary:hover svg { transform: translateX(4px); }
-        .hero-stats {
-            display: flex; gap: 48px; margin-top: 80px;
-            padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.15);
-            animation: fadeUp 0.8s var(--ease-out-expo) 0.6s both;
-        }
+        .hero-stats { display: flex; gap: 48px; margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(201,168,76,0.15); animation: fadeUp 0.8s var(--ease-out-expo) 0.6s both; }
         .hero-stat-number { font-family: var(--font-display); font-size: 36px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 6px; }
         .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
 
-        /* URGENCY BAR */
-        .urgency-bar {
-            background: var(--navy);
-            border-top: 1px solid rgba(201,168,76,0.15);
-            border-bottom: 1px solid rgba(201,168,76,0.15);
-            padding: 20px 0; overflow: hidden;
-        }
+        .urgency-bar { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 20px 0; overflow: hidden; }
         .urgency-scroll { display: flex; gap: 60px; animation: scroll-left 30s linear infinite; white-space: nowrap; }
         .urgency-item { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
         .urgency-item span:first-child { color: var(--gold); font-family: var(--font-display); font-size: 18px; font-weight: 600; }
         .urgency-item span:last-child { color: rgba(255,255,255,0.5); font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
 
-        /* SECTION COMMON */
-        .section-label {
-            display: inline-flex; align-items: center; gap: 10px;
-            font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
-            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
-        }
+        .section-label { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
         .section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
         .section-title { font-family: var(--font-display); font-size: clamp(32px,4vw,52px); font-weight: 500; color: var(--navy); line-height: 1.15; margin-bottom: 24px; }
         .section-title em { font-style: italic; color: var(--gold); }
         .section-subtitle { font-size: 17px; color: var(--gray-600); max-width: 600px; line-height: 1.8; margin-bottom: 60px; }
 
-        /* PROBLEM */
         .problem { padding: 120px 0; background: var(--cream); }
         .risk-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-        .risk-card {
-            background: var(--white); border-radius: 8px; padding: 40px 32px;
-            border: 1px solid var(--gray-200); transition: all 0.4s var(--ease-out-expo);
-            position: relative; overflow: hidden;
-        }
+        .risk-card { background: var(--white); border-radius: 8px; padding: 40px 32px; border: 1px solid var(--gray-200); transition: all 0.4s var(--ease-out-expo); position: relative; overflow: hidden; }
         .risk-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gray-200); transition: background 0.4s; }
         .risk-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,42,74,0.08); border-color: transparent; }
         .risk-card:hover::before { background: var(--gold); }
@@ -232,7 +124,6 @@
         .risk-stat { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--gray-200); font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--red-accent); }
         .risk-stat small { display: block; font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--gray-400); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 2px; }
 
-        /* SERVICES */
         .services { padding: 120px 0; background: var(--navy-deep); position: relative; }
         .services::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, rgba(201,168,76,0.04) 0%, transparent 50%); }
         .services .section-title { color: var(--white); }
@@ -249,7 +140,6 @@
         .service-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: gap 0.3s; }
         .service-link:hover { gap: 14px; }
 
-        /* PRODUCTS */
         .products { padding: 120px 0; background: var(--cream); }
         .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; flex-wrap: wrap; gap: 20px; }
         .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 40px; }
@@ -265,7 +155,6 @@
         .product-btn { display: block; width: 100%; text-align: center; padding: 14px; background: var(--navy); color: var(--white); border-radius: 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s; }
         .product-btn:hover { background: var(--gold); color: var(--navy-deep); }
 
-        /* BUNDLE */
         .bundle-card { background: var(--navy-deep); border-radius: 12px; padding: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; border: 1px solid rgba(201,168,76,0.2); position: relative; overflow: hidden; }
         .bundle-card::before { content: ''; position: absolute; top: -50%; right: -20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%); border-radius: 50%; }
         .bundle-label { display: inline-block; background: var(--gold); color: var(--navy-deep); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 3px; margin-bottom: 20px; }
@@ -280,31 +169,24 @@
         .bundle-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy-deep); padding: 16px 36px; border-radius: 4px; font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s; margin-top: 4px; }
         .bundle-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
 
-        /* CREDENTIALS */
         .credentials { padding: 120px 0; background: var(--white); }
         .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .credential-badge { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 8px 16px; font-size: 13px; font-weight: 500; color: var(--navy); letter-spacing: 0.02em; display: inline-block; }
         .credentials-text p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: 16px; }
-
-        /* Qualification cards */
         .qual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-        .qual-card { background: var(--cream); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px; position: relative; transition: all 0.3s var(--ease-out-expo); }
+        .qual-card { background: var(--cream); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px; transition: all 0.3s var(--ease-out-expo); }
         .qual-card:hover { border-color: var(--gold); box-shadow: 0 8px 30px rgba(27,42,74,0.06); transform: translateY(-2px); }
         .qual-card-body { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
         .qual-card-logo { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--navy); }
-        .qual-card-logo span { color: var(--gold); }
         .qual-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--gold); color: var(--navy-deep); padding: 3px 8px; border-radius: 3px; }
         .qual-card h4 { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.4; margin-bottom: 6px; }
         .qual-card p { font-size: 12px; color: var(--gray-400); line-height: 1.5; }
-
-        /* Membership badges */
         .membership-row { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
         .membership-badge { display: flex; align-items: center; gap: 10px; background: var(--navy-deep); border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 12px 20px; }
         .membership-badge-icon { width: 32px; height: 32px; background: var(--gold); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 12px; color: var(--navy-deep); }
         .membership-badge-text { font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.3; }
         .membership-badge-text small { display: block; font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 400; }
 
-        /* FREE CTA */
         .free-cta { padding: 100px 0; background: var(--navy); position: relative; overflow: hidden; }
         .free-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%); }
         .free-cta-inner { text-align: center; position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
@@ -314,7 +196,6 @@
         .free-cta .btn-primary { animation: pulse-gold 3s infinite; }
         .free-cta .btn-primary:hover { animation: none; }
 
-        /* CONTACT */
         .contact { padding: 120px 0; background: var(--cream); }
         .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
         .contact-info h2 { font-family: var(--font-display); font-size: clamp(28px,3.5vw,44px); font-weight: 500; color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
@@ -335,14 +216,11 @@
         .form-group textarea { resize: vertical; min-height: 120px; }
         .form-submit { width: 100%; padding: 16px; background: var(--navy); color: var(--white); border: none; border-radius: 6px; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.3s; cursor: pointer; }
         .form-submit:hover { background: var(--gold); color: var(--navy-deep); }
-
-        /* SUCCESS MESSAGE (replaces blank page) */
         .form-success { display: none; text-align: center; padding: 40px 20px; }
         .form-success-icon { width: 64px; height: 64px; background: rgba(39,174,96,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
         .form-success h4 { font-family: var(--font-display); font-size: 26px; color: var(--navy); margin-bottom: 12px; }
         .form-success p { font-size: 15px; color: var(--gray-600); line-height: 1.7; }
 
-        /* FOOTER */
         .footer { background: var(--navy-deep); padding: 60px 0 40px; border-top: 1px solid rgba(201,168,76,0.1); }
         .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
         .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.4); max-width: 320px; line-height: 1.7; margin-top: 16px; }
@@ -355,7 +233,6 @@
         .footer-legal a { font-size: 13px; color: rgba(255,255,255,0.3); transition: color 0.3s; }
         .footer-legal a:hover { color: var(--gold); }
 
-        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .risk-grid, .services-grid { grid-template-columns: 1fr; }
             .products-grid { grid-template-columns: 1fr 1fr; }
@@ -390,7 +267,6 @@
 </head>
 <body>
 
-    <!-- NAV -->
     <nav class="nav" id="nav">
         <div class="container">
             <div class="nav-inner">
@@ -412,16 +288,15 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-eyebrow">
                     <div class="hero-eyebrow-dot"></div>
-                    <span>AI regulation is here — and it's not slowing down</span>
+                    <span>AI regulation is here and it is not slowing down</span>
                 </div>
                 <h1>AI compliance,<br><em>made practical</em></h1>
-                <p class="hero-sub">Expert-built compliance frameworks for UK businesses navigating UK GDPR, DPA 2018 and the EU AI Act. From your first policy to ongoing advisory — we keep you compliant as the rules evolve.</p>
+                <p class="hero-sub">Expert-built compliance frameworks for UK businesses navigating UK GDPR, DPA 2018 and the EU AI Act. From your first policy to ongoing advisory support, we keep you compliant as the rules evolve.</p>
                 <div class="hero-actions">
                     <a href="#products" class="btn-primary">
                         View Templates
@@ -450,7 +325,6 @@
         </div>
     </section>
 
-    <!-- URGENCY BAR -->
     <div class="urgency-bar">
         <div class="urgency-scroll">
             <div class="urgency-item"><span>UK GDPR</span><span>Compliance</span></div>
@@ -472,17 +346,16 @@
         </div>
     </div>
 
-    <!-- PROBLEM -->
     <section class="problem" id="problem">
         <div class="container">
             <div class="section-label reveal">The Problem</div>
             <h2 class="section-title reveal">Your business is using AI.<br><em>The rules keep changing.</em></h2>
-            <p class="section-subtitle reveal">Most UK businesses adopted AI tools without a compliance framework. That gap is now a risk — and with AI regulation accelerating across the UK and EU, staying compliant requires more than a one-off fix.</p>
+            <p class="section-subtitle reveal">Most UK businesses adopted AI tools without a compliance framework. That gap is now a risk. With AI regulation accelerating across the UK and EU, staying compliant requires more than a one-off fix.</p>
             <div class="risk-grid">
                 <div class="risk-card reveal reveal-delay-1">
                     <div class="risk-card-icon red">⚠</div>
                     <h3>No AI Usage Policy</h3>
-                    <p>Your staff are using ChatGPT, Copilot, Gemini and AI features inside your CRM right now — with no rules governing any of it. Every unmonitored interaction is a potential data breach.</p>
+                    <p>Your staff are using ChatGPT, Copilot, Gemini and AI features inside your CRM right now with no rules governing any of it. Every unmonitored interaction is a potential data breach.</p>
                     <div class="risk-stat">97% <small>of UK SMEs have no AI policy</small></div>
                 </div>
                 <div class="risk-card reveal reveal-delay-2">
@@ -494,19 +367,18 @@
                 <div class="risk-card reveal reveal-delay-3">
                     <div class="risk-card-icon gold">🔄</div>
                     <h3>No Ongoing Compliance Programme</h3>
-                    <p>AI compliance is not a one-off project. New tools get adopted, regulations evolve, staff change. Without continuous monitoring and regular reviews, today's compliance becomes tomorrow's liability.</p>
+                    <p>AI compliance is not a one-off project. New tools get adopted, regulations evolve and staff change. Without continuous monitoring and regular reviews, today's compliance becomes tomorrow's liability.</p>
                     <div class="risk-stat">€35M <small>maximum EU AI Act fine</small></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-label reveal">What We Do</div>
             <h2 class="section-title reveal">Compliance solutions<br><em>that actually work</em></h2>
-            <p class="section-subtitle reveal">Whether you need a template today or a compliance partner for the long term — we meet you where you are and grow with you.</p>
+            <p class="section-subtitle reveal">Whether you need a template today or a compliance partner for the long term, we meet you where you are and grow with you.</p>
             <div class="services-grid">
                 <div class="service-card reveal reveal-delay-1">
                     <div class="service-card-price">From £19</div>
@@ -524,7 +396,7 @@
                 <div class="service-card reveal reveal-delay-2">
                     <div class="service-card-price">£295</div>
                     <h3>AI Compliance Health Check</h3>
-                    <p>A full diagnostic of your AI compliance position. Every tool reviewed, every gap identified, every risk rated — with a prioritised action plan you can implement immediately.</p>
+                    <p>A full diagnostic of your AI compliance position. Every tool reviewed, every gap identified and every risk rated, with a prioritised action plan you can implement immediately.</p>
                     <ul>
                         <li>Complete AI tool audit across all departments</li>
                         <li>Gap analysis against UK GDPR and EU AI Act</li>
@@ -548,7 +420,7 @@
                 <div class="service-card reveal reveal-delay-4">
                     <div class="service-card-price">From £500 per session</div>
                     <h3>Staff Training Programme</h3>
-                    <p>Practical, engaging training for your teams — from the boardroom to the front line. We make AI compliance understandable for every employee, not just your compliance team.</p>
+                    <p>Practical, engaging training for your teams from the boardroom to the front line. We make AI compliance understandable for every employee, not just your compliance team.</p>
                     <ul>
                         <li>AI awareness training for all staff</li>
                         <li>Manager and leadership briefings</li>
@@ -572,7 +444,7 @@
                 <div class="service-card reveal reveal-delay-2">
                     <div class="service-card-price">From £1,200/month</div>
                     <h3>Fractional AI Compliance Officer</h3>
-                    <p>Not ready for a full-time hire? We embed into your business as your dedicated AI compliance lead — attending meetings, advising on new tools and reporting to your board.</p>
+                    <p>Not ready for a full-time hire? We embed into your business as your dedicated AI compliance lead, attending meetings, advising on new tools and reporting to your board.</p>
                     <ul>
                         <li>Named compliance lead for your business</li>
                         <li>Attend internal meetings and board reporting</li>
@@ -585,7 +457,6 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
     <section class="products" id="products">
         <div class="container">
             <div class="products-header">
@@ -593,7 +464,7 @@
                     <div class="section-label reveal">Templates</div>
                     <h2 class="section-title reveal">Expert-built.<br><em>Ready today.</em></h2>
                 </div>
-                <p class="reveal" style="max-width:400px;color:var(--gray-600);font-size:15px;line-height:1.7;">Every template is aligned to UK GDPR, DPA 2018 and the EU AI Act. Fill in the brackets, distribute to your team, file for your records. Compliance by close of business.</p>
+                <p class="reveal" style="max-width:400px;color:var(--gray-600);font-size:15px;line-height:1.7;">Every template is aligned to UK GDPR, DPA 2018 and the EU AI Act. Fill in the brackets, distribute to your team and file for your records. Compliance by close of business.</p>
             </div>
             <div class="products-grid">
                 <div class="product-card reveal reveal-delay-1">
@@ -623,7 +494,7 @@
                         <h3>AI Tool Register</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Track every AI tool in your business — name, data processed, lawful basis, DPIA status, EU AI Act classification and outstanding actions.</p>
+                        <p>Track every AI tool in your business. Name, data processed, lawful basis, DPIA status, EU AI Act classification and outstanding actions all in one place.</p>
                         <div class="product-price">£19</div>
                         <a href="https://aicomplianceuk.gumroad.com/l/ai-tool-register" class="product-btn">Get Template</a>
                     </div>
@@ -643,7 +514,7 @@
                         <h3>Staff AI Acceptable Use Policy</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Plain English policy for all employees. 5 Golden Rules, do's and don'ts, verification checklist, incident procedures and signed acknowledgement form.</p>
+                        <p>Plain English policy for all employees. 5 Golden Rules, dos and don'ts, verification checklist, incident procedures and signed acknowledgement form.</p>
                         <div class="product-price">£29</div>
                         <a href="https://aicomplianceuk.gumroad.com/l/staff-ai-policy" class="product-btn">Get Template</a>
                     </div>
@@ -654,7 +525,7 @@
                         <h3>AI Compliance Checklist</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Score your AI compliance in 5 minutes. 5 critical questions, traffic-light scoring and a clear action plan. Find out where you stand — for free.</p>
+                        <p>Score your AI compliance in 5 minutes. 5 critical questions, traffic-light scoring and a clear action plan. Find out where you stand, for free.</p>
                         <div class="product-price">£0 <small>Free download</small></div>
                         <a href="https://aicomplianceuk.gumroad.com/l/free-ai-compliance-checklist" class="product-btn" style="background:var(--green-accent);">Download Free</a>
                     </div>
@@ -664,7 +535,7 @@
                 <div>
                     <div class="bundle-label">Best Value</div>
                     <h3>The Complete AI Compliance Bundle</h3>
-                    <p>All 5 templates in one purchase. A complete, documented AI governance framework — built in one afternoon. Replaces £3,000–£5,000 of law firm work.</p>
+                    <p>All 5 templates in one purchase. A complete, documented AI governance framework built in one afternoon. Replaces thousands of pounds worth of law firm work.</p>
                 </div>
                 <div class="bundle-includes">
                     <ul>
@@ -689,18 +560,15 @@
         </div>
     </section>
 
-    <!-- CREDENTIALS -->
     <section class="credentials" id="credentials">
         <div class="container">
             <div class="credentials-grid">
                 <div class="reveal">
                     <div class="section-label">About</div>
                     <h2 class="section-title">The right guidance,<br><em>from the right background</em></h2>
-                    <p class="credentials-text">AI Comply was founded by Alexander Afolabi — a regulatory compliance professional whose career has spanned the Financial Conduct Authority and Care Quality Commission regulatory environments.</p>
-                    <p class="credentials-text">That depth of experience across financial services and healthcare regulation — two of the most heavily regulated sectors in the UK — shapes everything we do. Our frameworks are not theoretical. They reflect how compliance works in practice, what regulators expect to see and what good governance looks like from the inside.</p>
-                    <p class="credentials-text">We exist to make that expertise accessible to every UK business — not just the ones that can afford City law firm rates.</p>
-
-                    <!-- Qualification Cards -->
+                    <p class="credentials-text">AI Comply was founded by Alexander Afolabi, a regulatory compliance professional whose career has spanned the Financial Conduct Authority and Care Quality Commission regulatory environments.</p>
+                    <p class="credentials-text">That depth of experience across financial services and healthcare regulation, two of the most heavily regulated sectors in the UK, shapes everything we do. Our frameworks are not theoretical. They reflect how compliance works in practice, what regulators expect to see and what good governance looks like from the inside.</p>
+                    <p class="credentials-text">We exist to make that expertise accessible to every UK business, not just the ones that can afford City law firm rates.</p>
                     <div class="qual-grid">
                         <div class="qual-card">
                             <div class="qual-card-body">
@@ -708,7 +576,7 @@
                                 <div class="qual-card-tag">Certified</div>
                             </div>
                             <h4>Certified Information Privacy Manager</h4>
-                            <p>CIPM — globally recognised credential for privacy programme management</p>
+                            <p>CIPM, globally recognised credential for privacy programme management</p>
                         </div>
                         <div class="qual-card">
                             <div class="qual-card-body">
@@ -716,11 +584,9 @@
                                 <div class="qual-card-tag">Specialist</div>
                             </div>
                             <h4>Specialist Certificate in AI Compliance</h4>
-                            <p>ICA — the leading professional qualification for AI compliance practitioners</p>
+                            <p>ICA, the leading professional qualification for AI compliance practitioners</p>
                         </div>
                     </div>
-
-                    <!-- Membership Badges -->
                     <div class="membership-row">
                         <div class="membership-badge">
                             <div class="membership-badge-icon">IAPP</div>
@@ -738,9 +604,8 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="reveal" style="background:var(--cream);border-radius:12px;padding:48px;border:1px solid var(--gray-200);">
-                    <p style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--navy);line-height:1.5;margin-bottom:32px;font-style:italic;">"Compliance should protect your business — not paralyse it. We make it practical, proportionate and built to last."</p>
+                    <p style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--navy);line-height:1.5;margin-bottom:32px;font-style:italic;">"Compliance should protect your business, not paralyse it. We make it practical, proportionate and built to last."</p>
                     <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
                         <div style="width:48px;height:48px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--navy-deep);flex-shrink:0;">AA</div>
                         <div>
@@ -765,12 +630,11 @@
         </div>
     </section>
 
-    <!-- FREE CTA -->
     <section class="free-cta">
         <div class="container">
             <div class="free-cta-inner reveal">
                 <h2>Not sure where<br><em>you stand?</em></h2>
-                <p>Download our free AI Compliance Checklist. Five questions. Five minutes. A clear score that tells you exactly where your gaps are — and what to do next.</p>
+                <p>Download our free AI Compliance Checklist. Five questions. Five minutes. A clear score that tells you exactly where your gaps are and what to do next.</p>
                 <a href="https://aicomplianceuk.gumroad.com/l/free-ai-compliance-checklist" class="btn-primary">
                     Download Free Checklist
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -779,14 +643,13 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info reveal">
                     <div class="section-label">Get in Touch</div>
                     <h2>Let's talk about your <em>AI compliance</em></h2>
-                    <p>Whether you need a quick question answered, a health check booked, a training session planned or an ongoing advisory relationship — every enquiry gets a personal response within one working day.</p>
+                    <p>Whether you need a quick question answered, a health check booked, a training session planned or an ongoing advisory relationship, every enquiry gets a personal response within one working day.</p>
                     <div class="contact-detail">
                         <div class="contact-detail-icon">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -815,64 +678,59 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="contact-form-card reveal">
                     <h3>Send an Enquiry</h3>
                     <p>I will respond within one working day.</p>
-
-                    <!-- FORM: submits via JS, shows success message inline — no blank page redirect -->
                     <div id="formWrap">
                         <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="contact">
                             <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">Full Name *</label>
-                                    <input type="text" id="name" name="name" required placeholder="Your name">
+                                    <label for="fname">Full Name *</label>
+                                    <input type="text" id="fname" name="name" required placeholder="Your name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required placeholder="you@company.co.uk">
+                                    <label for="femail">Email Address *</label>
+                                    <input type="email" id="femail" name="email" required placeholder="you@company.co.uk">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="company">Company Name</label>
-                                    <input type="text" id="company" name="company" placeholder="Your company">
+                                    <label for="fcompany">Company Name</label>
+                                    <input type="text" id="fcompany" name="company" placeholder="Your company">
                                 </div>
                                 <div class="form-group">
-                                    <label for="employees">Company Size</label>
-                                    <select id="employees" name="employees">
+                                    <label for="femployees">Company Size</label>
+                                    <select id="femployees" name="employees">
                                         <option value="">Select size</option>
-                                        <option value="1-10">1–10 employees</option>
-                                        <option value="11-50">11–50 employees</option>
-                                        <option value="51-250">51–250 employees</option>
-                                        <option value="250+">250+ employees</option>
+                                        <option value="1-10">1 to 10 employees</option>
+                                        <option value="11-50">11 to 50 employees</option>
+                                        <option value="51-250">51 to 250 employees</option>
+                                        <option value="250+">250 or more employees</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="interest">What are you interested in?</label>
-                                <select id="interest" name="interest">
+                                <label for="finterest">What are you interested in?</label>
+                                <select id="finterest" name="interest">
                                     <option value="">Select an option</option>
                                     <option value="health-check">AI Compliance Health Check (£295)</option>
                                     <option value="full-audit">Full Compliance Audit (from £1,500)</option>
                                     <option value="training">Staff Training Programme (from £500)</option>
-                                    <option value="retainer">Ongoing Advisory Retainer (from £750/month)</option>
-                                    <option value="fractional">Fractional AI Compliance Officer (from £1,200/month)</option>
-                                    <option value="templates">Templates — need help choosing</option>
+                                    <option value="retainer">Ongoing Advisory Retainer (from £750 per month)</option>
+                                    <option value="fractional">Fractional AI Compliance Officer (from £1,200 per month)</option>
+                                    <option value="templates">Templates, need help choosing</option>
                                     <option value="general">General enquiry</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="message">Your Message *</label>
-                                <textarea id="message" name="message" required placeholder="Tell me about your business and what you need help with..."></textarea>
+                                <label for="fmessage">Your Message *</label>
+                                <textarea id="fmessage" name="message" required placeholder="Tell me about your business and what you need help with"></textarea>
                             </div>
                             <button type="submit" class="form-submit">Send Enquiry</button>
                         </form>
                     </div>
-
-                    <!-- Success message shown after submit -->
                     <div class="form-success" id="formSuccess">
                         <div class="form-success-icon">✓</div>
                         <h4>Message Sent!</h4>
@@ -883,7 +741,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
@@ -892,7 +749,7 @@
                         <div class="nav-logo-icon">AC</div>
                         <div class="nav-logo-text">AI <span>Comply</span></div>
                     </a>
-                    <p>AI compliance made practical for UK businesses. Expert-built templates, health checks and training programmes designed for SMEs navigating UK GDPR, DPA 2018 and the EU AI Act.</p>
+                    <p>AI compliance made practical for UK businesses. Expert-built templates, health checks and training programmes for SMEs navigating UK GDPR, DPA 2018 and the EU AI Act.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Services</h4>
@@ -916,7 +773,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AI Comply. All rights reserved.</p>
+                <p>2026 AI Comply. All rights reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -926,11 +783,9 @@
     </footer>
 
     <script>
-        // Nav scroll
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-        // Hamburger
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         hamburger.addEventListener('click', () => {
@@ -942,13 +797,11 @@
             navLinks.classList.remove('open');
         }));
 
-        // Scroll reveal
         const observer = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -957,25 +810,20 @@
             });
         });
 
-        // ── CONTACT FORM: AJAX submit — prevents blank page redirect ──
         const form = document.getElementById('contactForm');
         const formWrap = document.getElementById('formWrap');
         const formSuccess = document.getElementById('formSuccess');
-
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = form.querySelector('.form-submit');
-            btn.textContent = 'Sending…';
+            btn.textContent = 'Sending...';
             btn.disabled = true;
-
             try {
-                const data = new FormData(form);
                 await fetch('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(data).toString()
+                    body: new URLSearchParams(new FormData(form)).toString()
                 });
-                // Show success, hide form
                 formWrap.style.display = 'none';
                 formSuccess.style.display = 'block';
             } catch (err) {
